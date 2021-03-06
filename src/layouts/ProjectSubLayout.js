@@ -11,6 +11,7 @@ import DatabaseLayout from '../projects/database/DatabaseLayout'
 const ProjectSubLayout = ({ match }) => {
   const [project, setProject] = useState(false)
   const { projectId } = match.params
+  console.log(match)
 
   useEffect(() => {
     let isCurrent = true

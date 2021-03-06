@@ -4,14 +4,17 @@ import AuthorizedPrimaryHeader from '../ui/AuthorizedPrimaryHeader'
 import AccountSubLayout from './AccountSubLayout'
 import ProjectSubLayout from './ProjectSubLayout'
 
-const AuthorizedLayout = () => (
-  <div className="app authorized-layout">
-    <AuthorizedPrimaryHeader />
-    <Switch>
-      <Route path="/projects" exact component={AccountSubLayout} />
-      <Route path="/projects/:projectId" component={ProjectSubLayout} />
-    </Switch>
-  </div>
-)
+const AuthorizedLayout = ({match}) => {
+  // console.log(match)
+  return (
+    <div className="app authorized-layout">
+      <AuthorizedPrimaryHeader />
+      <Switch>
+        <Route path={match.path} exact component={AccountSubLayout} />
+        <Route path={`${match.path}/:projectId`} component={ProjectSubLayout} />
+      </Switch>
+    </div>
+  )
+}
 
 export default AuthorizedLayout

@@ -8,6 +8,7 @@ import SigninMethods from './SigninMethods'
 import Templates from './Templates'
 
 const AuthenticationLayout = ({ match }) => {
+  console.log(match)
   return (
     <Fragment>
       <PageHeader title="Authentication" useMaxWidth={false}>
